@@ -3,10 +3,12 @@ var express = require('express');
 var cookieParser = require('cookie-parser');
 var logger = require('morgan');
 var cors = require('cors');
+var apicache = require('apicache');
 
 var restaurantsRouter = require('./routes/restaurants');
 
 var app = express();
+var cache = apicache.middleware;
 
 app.set('view engine', 'jade');
 
@@ -15,6 +17,7 @@ app.use(express.json());
 app.use(express.urlencoded({ extended: false }));
 app.use(cookieParser());
 app.use(cors());
+app.use(cache('5 minutes'))
 
 app.use('/api/v1/restaurants', restaurantsRouter);
 
