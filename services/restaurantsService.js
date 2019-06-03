@@ -20,4 +20,10 @@ restaurantsService.search = function() {
   }).asPromise();
 };
 
+restaurantsService.nextPage = function(pageToken) {
+  return googleMapsClient.placesNearby({
+    pagetoken: pageToken,
+  }).asPromise();
+};
+
 module.exports = restaurantsService;

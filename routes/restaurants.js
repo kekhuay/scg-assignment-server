@@ -8,4 +8,10 @@ router.get('/search', function(req, res, next) {
   });
 });
 
+router.get('/search/next-page', function(req, res, next) {
+  restaurantsService.nextPage(req.query.pagetoken).then(function(response) {
+    res.send(response);
+  });
+});
+
 module.exports = router;
