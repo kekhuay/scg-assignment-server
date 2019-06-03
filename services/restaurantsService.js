@@ -11,12 +11,13 @@ var bangsueLocation = {
 };
 var restaurantsService = {};
 
-restaurantsService.search = function() {
+restaurantsService.search = function(keyword) {
   return googleMapsClient.placesNearby({
     location: bangsueLocation,
     type: 'restaurant',
     rankby: 'distance',
     language: 'th',
+    keyword: keyword
   }).asPromise();
 };
 

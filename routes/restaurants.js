@@ -6,7 +6,7 @@ var restaurantsService = require('../services/restaurantsService');
 var cache = apicache.middleware;
 
 router.get('/search', cache('5 minutes'), function(req, res, next) {
-  restaurantsService.search().then(function(response) {
+  restaurantsService.search(req.query.keyword).then(function(response) {
     res.send(response);
   });
 });
