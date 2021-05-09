@@ -16,7 +16,7 @@
     "http-errors": "~1.6.3",
     "jade": "^1.11.0",
     "linear-solve": "^1.2.1",
-    "lodash": "^4.17.11",
+    "lodash": "^4.17.21",
     "morgan": "~1.9.1",
     "promise": "^8.0.3"
   },
